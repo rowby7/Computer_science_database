@@ -59,8 +59,13 @@ foreign key (course_ID) references Course(CourseID)
 );
 
 CREATE TABLE Department(
-departmentID
+departmentID int(10) primary key,
+department_name varchar(20),
+Phone int(10),
+Office_Location varchar(20),
+chairperson_emplID int(9),
+chairperson_start_date DATE,
+secretary_emplID int (9),
+foreign key (chairperson_emplID) references employee(empl_ID),
+foreign key (secretary_emplID) references employee(empl_ID)
 );
-
-
-
