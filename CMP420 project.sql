@@ -305,9 +305,35 @@ WHERE department_name = 'Remedial Classes';
 
 /* 10 */
 
-SELECT DISTINCT s.fname, s.lname, s.email
+SELECT  s.fname, s.lname, s.email
 FROM Student s
 JOIN Enrollment e ON s.Student_emplID = e.Student_emplID
 WHERE e.Cheating_incidents IS NOT NULL AND e.Cheating_incidents <> 'None';
+
+
+/* 14 */
+SELECT Name, Salary
+FROM employee
+WHERE Salary = (
+    SELECT MAX(Salary)
+    FROM employee
+);
+
+/* 15 */
+SELECT Name, Salary
+FROM employee
+WHERE Salary = (
+    SELECT MIN(Salary)
+    FROM employee
+);
+
+/* 16 */
+
+SELECT Name, Salary
+FROM employee
+WHERE Salary <= (
+    SELECT AVG(Salary) + 5000
+    FROM employee
+);
 
 
