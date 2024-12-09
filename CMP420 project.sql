@@ -14,8 +14,7 @@ Role varchar(10),
 employee_rank varchar(10)
 );
 
-ALTER TABLE employee
-MODIFY Phone INT(15);
+
 
 INSERT INTO employee (empl_ID, Name, SSN, Phone, Address, Salary, Office_location, Date_of_hire, Title, Role, employee_rank)
 VALUES
